@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Dashboard{% endblock %}{% block content %}
+<h1>Hello, {{ user['name'] }} 👋</h1><p>Choose a planner to create a budget recommendation.</p><section class="grid three"><a class="cardlink" href="/home-planner"><h2>🏠 Home</h2><p>Interior planning</p></a><a class="cardlink" href="/party-planner"><h2>🎉 Party</h2><p>Event planning</p></a><a class="cardlink" href="/jewelry-planner"><h2>💎 Jewelry</h2><p>Style matching</p></a></section>
+<h2>Recent recommendations</h2><div class="list">{% for r in recommendations %}<a href="/recommendation/{{ r['id'] }}" class="row"><strong>{{ r['category']|title }}</strong><span>{{ r['created_at'] }}</span></a>{% else %}<p>No recommendations yet.</p>{% endfor %}</div>
+{% endblock %}

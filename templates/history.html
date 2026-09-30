@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block title %}History{% endblock %}{% block content %}<h1>Recommendation History</h1><div class="list">{% for r in recommendations %}<a class="row" href="/recommendation/{{ r['id'] }}"><strong>{{ r['category']|title }}</strong><span>{{ r['created_at'] }}</span></a>{% else %}<p>No saved recommendations yet.</p>{% endfor %}</div>{% endblock %}
